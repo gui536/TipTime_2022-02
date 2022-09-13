@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+<EditText
+    android:id="@+id/editText_costOfService"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Custo do Serviço"
+    android:inputType="numberDecimal"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+/>
+
+    <TextView
+        android:id="@+id/text_serviceQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Como foi o serviço?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_costOfService"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_tipOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_serviceQuestion">
+
+    <RadioButton
+        android:id="@+id/radioButton_amazingService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show de bola (20%)"
+        />
+
+        <RadioButton
+            android:id="@+id/radioButton_goodService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bacaninha (18%)"/>
+
+        <RadioButton
+            android:id="@+id/radioButton_averageService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Já vi melhores, mas tá bom (15%)"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnCalculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/TipAmount"/>
+
+    <Switch
+        android:id="@+id/roundUpSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup_tipOptions"
+        android:text="Arredondar a gorjeta?"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundUpSwitch"
+        android:text="Calcular"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
